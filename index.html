@@ -4,92 +4,164 @@
     <meta charset="UTF-8">
     <title>Tableau Visualizations</title>
     <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <style>
+       body {
+           font-family: Arial, sans-serif;
+           margin: 0;
+           padding: 0;
+           background-color: #f5f5f5;
+       }
+       header {
+           background-color: #2c3e50;
+           color: white;
+           padding: 20px;
+           text-align: center;
+       }
+       header h1 {
+           margin: 0;
+           font-size: 36px;
+       }
+       .text-above-viz {
+           padding: 20px;
+       }
+       .collapsible {
+           background-color: #2c3e50;
+           color: white;
+           cursor: pointer;
+           padding: 10px;
+           text-align: left;
+           outline: none;
+           font-size: 20px;
+           border: none;
+           margin-top: 10px;
+       }
+       .active, .collapsible:hover {
+           background-color: #34495e;
+       }
+       .contentCollapsible {
+           background-color: #f5f5f5;
+           height: 0;
+           overflow: hidden;
+           transition: height 0.3s ease;
+       }
+    </style>
+
 </head>
 <body>
-    <div class="text-above-viz">
-        <h2>Introduction</h2>
-        <p>In recent years, the automotive industry has witnessed a significant shift towards sustainable transportation solutions, driven by concerns over environmental sustainability and the need to reduce carbon emissions (European Environment Agency, 2016).
-        According to the International Energy Agency (IEA), road transport electrification on a global scale is expected to unlock substantial emission reductions in the coming decades (IEA, 2024). By 2035, the switch to electric vehicles (EVs) is projected to avoid over 2 gigatons (Gt) of carbon dioxide (CO2) emissions on a well-to-wheels basis. While there are concerns about additional emissions from electricity generation for EVs, the net savings from transitioning to electric vehicles far outweigh any potential drawbacks.
-        The introductory dashboard offers a comprehensive overview of EV adoption in Europe, highlighting key insights and trends based on the latest data. The left side features a map showing the production share of EVs as a percentage of projected EV production by 2027, with a color gradient from bright orange to bright blue indicating low to high market share. Notably, Norway, and Europe in general exhibit high EV production shares. The right side highlights Europe and displays a bar chart comparing the percentage of EV and non-EV car sales in 2023, with Norway leading in adoption, followed closely by the Netherlands. Users can interact with the dashboard to highlight EV or non-EV sales, or view both for a comprehensive comparison.</p>
-    </div>
-    <div class="tableauViz" style="width: 100%; height: 800px;"></div>
-        
-<!-- Visualization 2 - Framework -->
-    <div class="text-above-viz">
-            <h2>EV sales in the world</h2>
-            <p>Previous visualizations showed the projected ev production in 2027 in the world as well as the EV and non-EV car sales in Europe in the year 2023. It is also useful for the public to see and policymakers to be informed by how the EV sales worldwide change over time, therefore predicting the trend in the following years. Although the information provided is for the worldwide EV sales, each country can still gain insight and adopt their own policies locally. The graph shows the EV sales from 2017 to 2022, indicating a clear rising trend in the sales over the years. In 2022 the sales worldwide has reached 10 million. In the following visualizations we will delve into the reasons for this uprising trend and provide more detailed analysis for the information hidden behind the data.</p>
-    </div>
-       <div class="tableauViz" style="width: 100%; height: 800px;"></div>
- 
-        
-    <!-- Visualization 3 - Framework -->
-    <div class="text-above-viz">
-            <h2>Government spending on EV</h2>
-            <p>The visualization in these two graphs show how the government spending is increasing overall in past years. One could easily rationalize that with more money people are more willing to purchase EV, therefore causing the general rising trend in the EV sales worldwide. However, the average spending per EV refutes this saying by demonstrating a downward trend. Together with the previous visualization users could notice that with less incentive given for one EV by the government, the overall sales of EV has still been increasing in the past few years, suggesting that monetary factors are not, or at least not the only factors influencing the EV sales.</p>
-    </div>
-        <div class="tableauViz" style="width: 100%; height: 800px;"></div>
-   
-        
-    <!-- Visualization 4 - Framework -->
-    <div class="text-above-viz">
-            <h2>Reasons for people' EV purchase</h2>
-            <p>This visualization reveals the fundamental reasons concerning people’s purchase willingness of EV. On the left side the graph describes the reasons inhibiting purchase of EV. It is evident that the worry about the lack of charging stations in the city takes up the first place whereas the lack of charging infrastructure at work or home is less of a concern. On the contrary, the graph on the right illustrates the reasons motivating the purchase of EV. It is also interesting to see that the monetary incentive, which one may assume to be the most influential factor, only takes the third place in the middle. While environmental concerns are the most motivating factor encouraging people’s purchase. And in general all the factors can be categorized to 4 types: environmental concern, monetraty incentives, charging infrustracture and upfront costs.</p>
-    </div>
-        <div class="tableauViz" style="width: 100%; height: 800px;"></div>
+    <header>
+        <h1>European Electric Vehicle Adoption and Trends</h1>
+    </header>
+    <div class="content">
+        <div class="text-above-viz">
+            <h2>Introduction</h2>
+            <p>In recent years, the automotive industry has witnessed a significant shift towards sustainable transportation solutions, driven by concerns over environmental sustainability and the need to reduce carbon emissions (European Environment Agency, 2016). According to the International Energy Agency (IEA), road transport electrification on a global scale is expected to unlock substantial emission reductions in the coming decades (IEA, 2024). By 2035, the switch to electric vehicles (EVs) is projected to avoid over 2 gigatons (Gt) of carbon dioxide (CO2) emissions on a well-to-wheels basis. While there are concerns about additional emissions from electricity generation for EVs, the net savings from transitioning to electric vehicles far outweigh any potential drawbacks.</p>
+            <p>The introductory dashboard offers a comprehensive overview of EV adoption in Europe, highlighting key insights and trends based on the latest data. The left side features a map showing the production share of EVs as a percentage of projected EV production by 2027, with a color gradient from bright orange to bright blue indicating low to high market share. Notably, Norway, and Europe in general exhibit high EV production shares. The right side highlights Europe and displays a bar chart comparing the percentage of EV and non-EV car sales in 2023, with Norway leading in adoption, followed closely by the Netherlands. Users can interact with the dashboard to highlight EV or non-EV sales, or view both for a comprehensive comparison.</p>
+        </div>
+        <div class="tableauViz" style="width: 100%; height: auto;"></div>
 
-        
-    <!-- Visualization 5 - Framework -->
-    <div class="text-above-viz">
-            <h2>Financial incentive for EV purchase in selected European countries</h2>
-            <p>After consideration, we opted for 4 countries that are representative in Europe to make instructions for the policymakers to speed up the transformation in Europe. As a forerunner, Norway is chosen for its high EV adoption as illustrated in the beginning. Belgium and the Netherlands are also chosen since the Netherlands have a lot in common with Belgium while taking up a much higher proportion of EV sales than Belgium. Spain is also chosen as a southern European country and for its rich data availability.</p>
-    </div>
-        <div class="tableauViz" style="width: 100%; height: 800px;"></div>
-        
-        
-    <!-- Visualization 6 - Framework -->
-    <div class="text-above-viz">
-            <h2>Visualization 3</h2>
-            <p>Previous studies have proved that charging infrastructure is considered a key and indispensable factor in the use and popularization of electric vehicles [ 1 ]. The construction of a suitable charging network can effectively improve the satisfaction of electric vehicle users [ 2 ]. By investigating the relationship between EV market share and selected variables in 30 countries, Sierzchula et al [ 3 ] found that there is a significant positive correlation between charging infrastructure and a country's EV market share.Giansoldati et al [ 4 ] found that the availability of charging infrastructure as well as charging infrastructure availability was a key reason. [ 5 ] examined the barriers to EV penetration and identified charging infrastructure as a major barrier to the promotion of EVs in Italy.
-For this part of the study, we have 2 charts, where Figure 2 represents the number of high-speed charging posts per 1000 people and Figure 1 represents the number of total public charging posts per 1000 people (both high-speed and low-speed charging posts are included). As two countries with high EV ratios, both in terms of number and quality of charging posts, Norway and the Netherlands are much higher than both Belgium and Spain.
-Interestingly, Figure 1 shows a higher density of charging piles in the Netherlands than in Norway. In contrast, the ev share is higher in Norway than in the Netherlands. We think that the difference in the number of high-speed charging piles might explain this difference. This is because in general high-speed charging piles and low-speed charging piles tend to target different customer needs. Specifically, low-speed charging piles may be more able to meet daily commuting needs, such as charging during the workday, which is less sensitive to charging speed requirements, and which tends to account for a larger portion of customers whose main goal is daily commuting. High-speed chargers, on the other hand, tend to be more attractive to customers who travel long distances, and are often installed in locations such as highway service areas. We therefore believe that a possible reason for the difference between Norway and the Netherlands is that Norway better meets the requirements of customers who have a need to travel long distances.
-Therefore, we believe that, contrary to the previous impression that simply increasing the density of charging posts will not increase the share of EV sales indefinitely (e.g., in the Netherlands), increasing the number of high-speed charging posts may be an effective measure to increase the share of EV sales while increasing the density of charging posts to satisfy the main needs of vehicle owners.
+        <div class="text-above-viz">
+            <h2>EV Sales in the World</h2>
+            <p>Previous visualizations showed the projected EV production in 2027 in the world as well as the EV and non-EV car sales in Europe in the year 2023. It is also useful for the public to see and policymakers to be informed by how the EV sales worldwide change over time, therefore predicting the trend in the following years. Although the information provided is for the worldwide EV sales, each country can still gain insight and adopt their own policies locally. The graph shows the EV sales from 2017 to 2022, indicating a clear rising trend in the sales over the years. In 2022, the sales worldwide reached 10 million. In the following visualizations, we will delve into the reasons for this uprising trend and provide more detailed analysis for the information hidden behind the data.</p>
+        </div>
+        <div class="tableauViz" style="width: 100%; height: auto;"></div>
 
-[1]M. Coffman, P. Bernstein, S. Wee. Electric vehicles revisited: a review of factors that affect adoption. Transp Rev, 37(1) (2017), pp. 79-93. doi:10.1080/01441647.2016.1217282
-[2]F. Guo, J. Yang, J. Lu. The battery charging station location problem: impact of users’ range anxiety and distance convenience. Transp Res Part E Logist Transp Rev, 114 (2018), pp. 1-18. doi:10.1016/j.tre.2018.03.014
-[3]W. Sierzchula, S. Bakker, K. Maat, B. van Wee. The influence of financial incentives and other socio-economic factors on electric vehicle adoption. Energy Policy, 68 (2014), pp. 183-194. doi:10.1016/j.enpol.2014.01.043
-[4]E. Abotalebi, D.M. Scott, M.R. Ferguson. Why is electric vehicle uptake low in Atlantic Canada? A comparison to leading adoption provinces. J Transp Geogr, 74 (2019), pp. 289-298. doi:10.1016/j.jtrangeo.2018.12.001
-[5]M. Giansoldati, A. Monte, M. Scorrano. Barriers to the adoption of electric cars: evidence from an Italian survey. Energy Policy, 146 (2020), Article 111812. doi:10.1016/j.enpol.2020.111812</p>
+        <div class="text-above-viz">
+             <h2>Analysis Focus: Europe</h2>
+             <p>From this point onward, the analysis will shift its focus to Europe, particularly the countries of Norway, Spain, the Netherlands, and Belgium. The following sections will delve into various aspects of electric vehicle adoption and trends in these countries:</p>
+             <ul>
+               <li>Government Spending on EV</li>
+               <li>Reasons for People's EV Purchase</li>
+               <li>Financial Incentives for EV Purchase in Selected European Countries</li>
+               <li>Charging Infrastructure and EV Market Share</li>
+               <li>Recharging Cost</li>
+               <li>Policy Factor</li>
+               <li>Sources</li>
+             </ul>
+       </div>
+
+        <button type="button" class="collapsible">Government Spending on EV</button>
+        <div class="contentCollapsible">
+            <div class="text-above-viz">
+                <h2>Government Spending on EV</h2>
+                <p>The visualization in these two graphs shows how government spending has increased overall in past years. One could easily rationalize that with more money, people are more willing to purchase EVs, causing the general rising trend in EV sales worldwide. However, the average spending per EV refutes this by demonstrating a downward trend. Together with the previous visualization, users can notice that with less incentive given for one EV by the government, overall sales of EVs have still been increasing in the past few years, suggesting that monetary factors are not, or at least not the only factors influencing EV sales.</p>
+            </div>
+            <div class="tableauViz" style="width: 100%; height: auto;"></div>
+        </div>
+
+
+        <button type="button" class="collapsible">Reasons for People's EV Purchase</button>
+        <div class="contentCollapsible">
+            <div class="text-above-viz">
+                <h2>Reasons for People's EV Purchase</h2>
+                <p>This visualization reveals the fundamental reasons behind people’s willingness to purchase EVs. On the left side, the graph describes the reasons inhibiting the purchase of EVs. It is evident that concerns about the lack of charging stations in the city take first place, whereas the lack of charging infrastructure at work or home is less of a concern. On the contrary, the graph on the right illustrates the reasons motivating the purchase of EVs. Interestingly, monetary incentives, which one might assume to be the most influential factor, only take third place. Environmental concerns are the most motivating factor encouraging people’s purchases. Overall, the factors can be categorized into four types: environmental concern, monetary incentives, charging infrastructure, and upfront costs.</p>
+            </div>
+            <div class="tableauViz" style="width: 100%; height: auto;"></div>
+        </div>
+
+        <button type="button" class="collapsible">Financial Incentives for EV Purchase in Selected European Countries</button>
+        <div class="contentCollapsible">
+            <div class="text-above-viz">
+                <h2>Financial Incentives for EV Purchase in Selected European Countries</h2>
+                <p>After consideration, we opted for four countries representative of Europe to make recommendations for policymakers to accelerate the transformation in Europe. As a forerunner, Norway is chosen for its high EV adoption. Belgium and the Netherlands are also chosen since the Netherlands has a lot in common with Belgium while having a much higher proportion of EV sales. Spain is also chosen as a southern European country with rich data availability.</p>
+            </div>
+            <div class="tableauViz" style="width: 100%; height: auto;"></div>
+        </div>
+
+        <button type="button" class="collapsible">Charging Infrastructure and EV Market Share</button>
+        <div class="contentCollapsible">
+            <div class="text-above-viz">
+                <h2>Charging Infrastructure and EV Market Share</h2>
+                <p>Previous studies have shown that charging infrastructure is a key factor in the adoption and satisfaction of electric vehicle users. By investigating the relationship between EV market share and selected variables in 30 countries, Sierzchula et al. found a significant positive correlation between charging infrastructure and a country's EV market share. For this part of the study, we have two charts: Figure 2 represents the number of high-speed charging posts per 1000 people, and Figure 1 represents the number of total public charging posts per 1000 people (both high-speed and low-speed charging posts included). As two countries with high EV ratios, both in number and quality of charging posts, Norway and the Netherlands are much higher than Belgium and Spain.</p>
+                <p>Interestingly, Figure 1 shows a higher density of charging posts in the Netherlands than in Norway. However, the EV share is higher in Norway than in the Netherlands. We believe the difference in the number of high-speed charging posts might explain this. High-speed chargers tend to be more attractive to customers who travel long distances, often installed in highway service areas. Thus, increasing the number of high-speed charging posts may effectively increase the share of EV sales.</p>
+            </div>
+            <div class="tableauViz" style="width: 100%; height: auto;"></div>
+        </div>
+
+        <button type="button" class="collapsible">Recharging Cost</button>
+        <div class="contentCollapsible">
+            <div class="text-above-viz">
+                <h2>Recharging Cost</h2>
+                <p>For consumers and potential buyers, one important factor is the recharging price. One recharging cost comprises multiple aspects: home AC recharging (the most common and least expensive way of charging EVs at home), public AC (alternating current) recharging (usually slow and cheaper), and fast but more expensive public DC (direct current) recharging. Another option is to subscribe to eMobility Service Providers (MSPs), which involves a subscription fee. The chart below shows these components in Norway, Spain, the Netherlands, and Belgium. An interactive dashboard is also shown, allowing users to get an estimated monthly recharging cost based on their monthly kilometers driven, average vehicle consumption, and composition of different recharging methods. Please note that additional costs may apply and the prices are only indicative.</p>
+            </div>
+            <div class="tableauViz" style="width: 100%; height: auto;"></div>
+        </div>
+
+        <button type="button" class="collapsible">Policy Factor</button>
+        <div class="contentCollapsible">
+            <div class="text-above-viz">
+                <h2>Policy Factor</h2>
+                <p>One critical factor influencing the adoption of EVs is policy. Policies have played a significant role in steering corporate strategies towards electrification and enabling consumer uptake. The EU has set a binding target for 100% zero-emission vehicle (ZEV) sales by 2035 for all member states. However, individual member states can set their own earlier targets to promote the early adoption of EVs. Among the four countries selected for discussion, Norway has set the earliest goal, aiming to achieve 100% ZEV sales for light-duty vehicles by 2025. Similarly, the Netherlands has set an earlier ZEV goal for 2030, ahead of the EU’s compulsory target of 2035. Belgium and Spain, on the other hand, follow the EU’s deadline, aiming to achieve 100% ZEV sales by 2035. These policy differences among countries contribute to the current differences in EV adoption rates. Norway and the Netherlands, with their earlier deadlines, have higher EV adoption rates compared to Belgium and Spain.</p>
+                <img src="https://onedrive.live.com/download?resid=1D362EFF7F26EBB1%2134307&authkey=%21APG-MM3AdbQJVaM&width=1708&height=746" alt="Example Image" style="width: 100%; height: auto;">
+            </div>
+        </div>
     </div>
-        <div class="tableauViz" style="width: 100%; height: 800px;"></div>
-        
-    <!-- Visualization 9 - Framework -->
-    <div class="text-above-viz">
-            <h2>Recharging Cost</h2>
-            <p>For consumers and potential buyers, one important factor is the recharging price. One recharging session can consist of several components: Private recharging price, that is, the electricity price when you recharge the EVs at home. When recharging in public places, it involves two kinds of fees: public AC (alternating current) recharging, which is usually slow and cheaper, and fast but more expensive public DC (direct current) recharging. Another option is to subscribe to eMobility Service Providers (MSPs), which involves subscription fee.  The chart below shows these components in Norway, Spain, Nederland, and Belgium. An interactive dashboard is also shown, so that users can get an estimated monthly recharging cost based on their own monthly kilometer driven, average vehicle consumption, composition of different recharging methods. Please note that additional costs may apply and the prices are only indicative.</p>
+     <div class="text-above-viz">
+            <h2>Conclusion</h2>
+            <p>Our study indicates that the impact of charging costs on EV sales remains uncertain. Additionally, financial incentives, the construction of charging infrastructure (including both slow and fast chargers), and government policies—particularly the target dates for achieving 100% zero-emission vehicle (ZEV) sales—are likely significant factors contributing to the differences in EV sales across countries.</p>
+        </div>
     </div>
-        <div class="tableauViz" style="width: 100%; height: 800px;"></div>
-    
-    <!-- Policy Factor Section -->
-    <div class="text-above-viz">
-        <h2>Policy Factor</h2>
-        <p>One critical factor influencing the adoption of EVs is policy. Policies have played a significant role in steering corporate strategies towards electrification and enabling consumer uptake. The EU has set a binding target for 100% zero-emission vehicle (ZEV) sales by 2035 for all member states. However, individual member states can set their own earlier targets to promote the early adoption of EVs. Among the four countries selected for discussion, Norway has set the earliest goal, aiming to achieve 100% ZEV sales for light-duty vehicles by 2025. Similarly, the Netherlands has set an earlier ZEV goal for 2030, ahead of the EU’s compulsory target of 2035. Belgium and Spain, on the other hand, follow the EU’s deadline, aiming to achieve 100% ZEV sales by 2035. These policy differences among countries contribute to the current differences in EV adoption rates. Norway and the Netherlands, with their earlier deadlines, have higher EV adoption rates compared to Belgium and Spain.</p>
-        <img src="https://onedrive.live.com/download?resid=1D362EFF7F26EBB1%2134307&authkey=%21APG-MM3AdbQJVaM&width=1708&height=746" alt="Example Image" style="width: 100%; height: auto;">
+    <div class="sources">
+        <h2>Sources</h2>
+        <p>European Environment Agency. (2016). Electric vehicles and the energy sector- impacts on Europe’s future emissions. Retrieved from <a href="https://www.eea.europa.eu/publications/electric-vehicles-and-energy">Electric vehicles and the energy sector - impacts on Europe's future emissions — European Environment Agency (europa.eu)</a></p>
+        <p>IEA. (2024). Outlook for emissions reductions. Retrieved from <a href="https://www.iea.org/reports/global-ev-outlook-2024">Outlook for emissions reductions – Global EV Outlook 2024 – Analysis - IEA</a></p>
+    </div>
+
 
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
             var visualizations = document.querySelectorAll('.tableauViz');
             var vizURLs = [
                 'https://public.tableau.com/views/DashboardEVadoption/Dashboard1?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link', // URL for Visualization 1
-                'https://public.tableau.com/views/6_06/Dashboard2?:language=zh-CN&publish=yes&:sid=&:display_count=n&:origin=viz_share_link', // URL for Visualization 2 - Add URL Here
-                'https://public.tableau.com/views/ElectriccarspendingworldwideandaveragespendingperEV/Dashboard3?:language=zh-CN&publish=yes&:sid=&:display_count=n&:origin=viz_share_link', // URL for Visualization 3 - Add URL Here
-                'https://public.tableau.com/views/5_24_17165571330570/Dashboard1?:language=zh-CN&:sid=&:display_count=n&:origin=viz_share_link', // URL for Visualization 4 - Add URL Here
-                'https://public.tableau.com/views/AverageEVfinancialpurchaseinselectedcountries/Dashboard4?:language=zh-CN&publish=yes&:sid=&:display_count=n&:origin=viz_share_link', // URL for Visualization 5 - Add URL Here
-                'https://public.tableau.com/views/totalchargingpoint/1?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link', // URL for Visualization 6 
-                'https://public.tableau.com/views/EVs_17178365534900/Dashboard1?:language=en-GB&publish=yes&:sid=&:display_count=n&:origin=viz_share_link'  // URL for Visualization 9 - Add URL Here
+                'https://public.tableau.com/views/6_06/Dashboard2?:language=zh-CN&publish=yes&:sid=&:display_count=n&:origin=viz_share_link', // URL for Visualization 2
+                'https://public.tableau.com/views/ElectriccarspendingworldwideandaveragespendingperEV/Dashboard3?:language=zh-CN&publish=yes&:sid=&:display_count=n&:origin=viz_share_link', // URL for Visualization 3
+                'https://public.tableau.com/views/5_24_17165571330570/Dashboard1?:language=zh-CN&:sid=&:display_count=n&:origin=viz_share_link', // URL for Visualization 4
+                'https://public.tableau.com/views/AverageEVfinancialpurchaseinselectedcountries_17181143928320/Dashboard4?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link', // URL for Visualization 5
+                'https://public.tableau.com/views/totalchargingpoint/1?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link', // URL for Visualization 6
+                'https://public.tableau.com/views/EVs_17178365534900/Dashboard1?:language=en-GB&publish=yes&:sid=&:display_count=n&:origin=viz_share_link'  // URL for Visualization 9
             ];
             var options = {
                 width: '100%',
-                height: '800px', // Adjust height as needed
+                height: '800px',
                 hideTabs: true,
                 hideToolbar: true
             };
@@ -98,6 +170,19 @@ Therefore, we believe that, contrary to the previous impression that simply incr
                     var viz = new tableau.Viz(vizDiv, vizURLs[index], options);
                 }
             });
+
+            var coll = document.getElementsByClassName("collapsible");
+            for (let i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var contentCollapsible = this.nextElementSibling;
+                    if (contentCollapsible.style.height) {
+                       contentCollapsible.style.height = null;
+                    } else {
+                       contentCollapsible.style.height = contentCollapsible.scrollHeight + "px";
+                    }
+                });
+            }
         });
     </script>
 </body>
